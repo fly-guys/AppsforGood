@@ -10,7 +10,7 @@
         android:id="@+id/testPush"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Supriyoh's Grease Palace"
+        android:text="Arun is sexy"
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="36sp"
         android:textStyle="bold|italic"
