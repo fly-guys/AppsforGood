@@ -12,6 +12,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    Random randy = new Random();
+
     Animation rotateAnimation;
     ImageView imageView;
 
