@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Question {
     //Data
     private String question;
+    private String answer;
     private ArrayList<String> answers;
 
 
@@ -14,5 +15,14 @@ public class Question {
     }
 
     //Methods
-    int i = 0;
+    public void addAnswer(String answerText, Boolean correct){
+        answers.add(answerText);
+        if(correct){
+            answer = answerText;
+        }
+    }
+
+    public String getQuestion(){
+        return question;
+    }
 }
