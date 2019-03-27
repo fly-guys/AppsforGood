@@ -7,10 +7,12 @@ public class Question {
     private String question;
     private ArrayList<String> answers;
 
+
     //Constructors
     public Question(String questionText){
         question = questionText;
     }
 
     //Methods
+    int i = 0;
 }
