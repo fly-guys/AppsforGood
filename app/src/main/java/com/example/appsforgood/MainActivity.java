@@ -69,6 +69,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * public void nextButtonAction(View v)
+     *     {
+     *         //Get Global Controller Class object (see application tag in AndroidManifest.xml)
+     *         final Controller aController = (Controller) getApplicationContext();
+     *
+     *         TextView textView = (TextView) findViewById(R.id.firstData);
+     *         String productName = textView.getText().toString();
+     *         System.out.println("PRODUCT NAME" + productName);
+     *         aController.getData().setProductName(productName);
+     *
+     *         Intent intent = new Intent(MainActivity.this, MainActivity2Activity.class);
+     *         startActivity(intent);
+     *
+     *     }
+     */
+
+
 //    public void rotateAnimation(View v) {
 //        rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
 //        imageView.startAnimation(rotateAnimation);
