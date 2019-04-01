@@ -3,11 +3,19 @@ package com.example.appsforgood;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     Animation rotateAnimation;
     ImageView imageView;
 
+    private ArrayList<QData> questions = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +35,43 @@ public class MainActivity extends AppCompatActivity {
         imageView=(ImageView)findViewById(R.id.Spinner);
     }
 
-    public void rotateAnimation(View v) {
-        rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
-        imageView.startAnimation(rotateAnimation);
+    public void readQData(){
+
+        InputStream is = getResources().openRawResource(R.raw.questions);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+        String line = "";
+        try {
+            while((line = reader.readLine()) != null){
+
+                //Split by ","
+                String[] fields = line.split(",");
+
+                questions.add(new QData(fields[0], fields[1], fields[2], fields[3], fields[4]));
+
+            }
+        }
+
+        catch(IOException io) {
+
+            Log.wtf("MainActivity", "ERROR raeding data on line " + line);
+        }
+
+        String songStr = "";
+
+        for(QData q : questions){
+            songStr += q.getQuestion() + " " + q.getAns1() + " " + q.getAns2() + " " + q.getAns3() + " " + q.getAns4() + "\n";
 
 
+            TextView songView = (TextView) findViewById(R.id.questionText);
+
+            songView.setText(songStr);
+        }
     }
+
+//    public void rotateAnimation(View v) {
+//        rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
+//        imageView.startAnimation(rotateAnimation);
+//
+//    }
 }
