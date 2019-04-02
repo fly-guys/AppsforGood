@@ -10,20 +10,21 @@
     <LinearLayout
         android:id="@+id/vertical"
         android:layout_width="395dp"
-        android:layout_height="713dp"
+        android:layout_height="719dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/questionText"
             android:layout_width="match_parent"
             android:layout_height="146dp"
-            android:text="TextView"
-            android:textSize="24sp" />
+            android:text="Sample Text"
+            android:textSize="24sp"
+            android:visibility="visible" />
 
         <Space
             android:layout_width="match_parent"
