@@ -95,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
             ans3Button.setText(answers.get(randy.nextInt(1)));
             answers.remove(ans3Button.getText());
             ans4Button.setText(answers.get(0));
+
+            //New Comment
         }
     }
 
