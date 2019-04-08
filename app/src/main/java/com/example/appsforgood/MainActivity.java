@@ -19,12 +19,15 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
 
+
 public class MainActivity extends AppCompatActivity {
 
     Random randy = new Random();
 
     Animation rotateAnimation;
     ImageView imageView;
+
+    String correctAnswer = "8";
 
     private ArrayList<QData> questionList = new ArrayList<>();
 
@@ -65,8 +68,15 @@ public class MainActivity extends AppCompatActivity {
         String ans2Str = "";
         String ans3Str = "";
         String ans4Str = "";
-        String correctAnswer = ans1Str;
+        String correctAnswer = "";
 
+
+        TextView qView = (TextView) findViewById(R.id.questionText);
+
+        final Button ans1Button = (Button) findViewById(R.id.option1);
+        final Button ans2Button = (Button) findViewById(R.id.option2);
+        final Button ans3Button = (Button) findViewById(R.id.option3);
+        final Button ans4Button = (Button) findViewById(R.id.option4);
 
         for(QData q : questionList){
             qStr += q.getQuestion();
@@ -75,17 +85,13 @@ public class MainActivity extends AppCompatActivity {
             ans3Str += q.getAns3();
             ans4Str += q.getAns4();
 
+//            correctAnswer = ans1Str;
+
             ArrayList<String> answers = new ArrayList<>();
             answers.add(ans1Str);
             answers.add(ans2Str);
             answers.add(ans3Str);
             answers.add(ans4Str);
-
-            TextView qView = (TextView) findViewById(R.id.questionText);
-            Button ans1Button = (Button) findViewById(R.id.option1);
-            Button ans2Button = (Button) findViewById(R.id.option2);
-            Button ans3Button = (Button) findViewById(R.id.option3);
-            Button ans4Button = (Button) findViewById(R.id.option4);
 
             qView.setText(qStr);
             ans1Button.setText(answers.get(randy.nextInt(3)));
@@ -98,6 +104,37 @@ public class MainActivity extends AppCompatActivity {
 
             //New Comment
         }
+
+//        if(ans1Button.isActivated() && ans1Button.getText().equals(correctAnswer)){
+//            Intent intent = new Intent(this, CorrectAnswer.class);
+//            startActivity(intent);
+//        }
+//        else if(ans2Button.isActivated() && ans2Button.getText().equals(correctAnswer)){
+//            Intent intent = new Intent(this, CorrectAnswer.class);
+//            startActivity(intent);
+//        }
+//        if(ans3Button.isActivated() && ans3Button.getText().equals(correctAnswer)){
+//            Intent intent = new Intent(this, CorrectAnswer.class);
+//            startActivity(intent);
+//        }
+//        if(ans4Button.isActivated() && ans4Button.getText().equals(correctAnswer)){
+//            Intent intent = new Intent(this, CorrectAnswer.class);
+//            startActivity(intent);
+//        }
+
+
+
+    }
+
+    public void checkCorrect(View v){
+        Button b = (Button)v;
+        String buttonText = b.getText().toString();
+
+        if(buttonText.equals(correctAnswer)){
+            Intent intent = new Intent(this, CorrectAnswer.class);
+            startActivity(intent);
+        }
+
     }
 
 
