@@ -24,7 +24,8 @@
             android:layout_height="146dp"
             android:text="Sample Text"
             android:textSize="24sp"
-            android:visibility="visible" />
+            android:visibility="visible"
+            tools:text="Question goes here" />
 
         <Space
             android:layout_width="match_parent"
