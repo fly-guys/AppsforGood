@@ -103,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//    public void rotateAnimation(View v) {
-//        rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
-//        imageView.startAnimation(rotateAnimation);
-//
-//    }
+   public void rotateAnimation(View v) {
+        rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        imageView.startAnimation(rotateAnimation);
+
+    }
 }
