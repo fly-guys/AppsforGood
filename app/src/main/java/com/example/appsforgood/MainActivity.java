@@ -22,12 +22,12 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    Random randy = new Random();
-
-    Animation rotateAnimation;
-    ImageView imageView;
-
-    String correctAnswer = "8";
+//    Random randy = new Random();
+//
+//    Animation rotateAnimation;
+//    ImageView imageView;
+//
+//    String correctAnswer = "8";
 
 
 
@@ -140,9 +140,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-   public void rotateAnimation(View v) {
-        rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
-        imageView.startAnimation(rotateAnimation);
-
-    }
+//   public void rotateAnimation(View v) {
+//        rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
+//        imageView.startAnimation(rotateAnimation);
+//
+//    }
 }
