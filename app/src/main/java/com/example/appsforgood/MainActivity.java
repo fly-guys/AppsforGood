@@ -38,37 +38,39 @@ public class MainActivity extends AppCompatActivity {
 
 //        imageView=(ImageView)findViewById(R.id.Spinner);
 
-        readQData();
+        Intent intent = new Intent(this, QuizActivity.class);
+        startActivity(intent);
+
     }
 
-    public void readQData(){
-
-        InputStream is = getResources().openRawResource(R.raw.questions);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-
-        String line = "";
-        try {
-            while((line = reader.readLine()) != null){
-
-                //Split by ","
-                String[] fields = line.split("~");
-
-                //questionList.add(new QData(fields[0], fields[1], fields[2], fields[3], fields[4]));
-
-            }
-        }
-
-        catch(IOException io) {
-
-            Log.wtf("MainActivity", "ERROR reading data on line " + line);
-        }
-
-        String qStr = "";
-        String ans1Str = "";
-        String ans2Str = "";
-        String ans3Str = "";
-        String ans4Str = "";
-        String correctAnswer = "";
+//    public void readQData(){
+//
+//        InputStream is = getResources().openRawResource(R.raw.questions);
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+//
+//        String line = "";
+//        try {
+//            while((line = reader.readLine()) != null){
+//
+//                //Split by ","
+//                String[] fields = line.split("~");
+//
+//                //questionList.add(new QData(fields[0], fields[1], fields[2], fields[3], fields[4]));
+//
+//            }
+//        }
+//
+//        catch(IOException io) {
+//
+//            Log.wtf("MainActivity", "ERROR reading data on line " + line);
+//        }
+//
+//        String qStr = "";
+//        String ans1Str = "";
+//        String ans2Str = "";
+//        String ans3Str = "";
+//        String ans4Str = "";
+//        String correctAnswer = "";
 
 
 //        TextView qView = (TextView) findViewById(R.id.questionText);
@@ -145,4 +147,4 @@ public class MainActivity extends AppCompatActivity {
 //        imageView.startAnimation(rotateAnimation);
 //
 //    }
-}
+

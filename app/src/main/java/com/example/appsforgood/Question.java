@@ -16,7 +16,7 @@ public class Question {
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
-        this.option1 = answer;
+        answer = option1;
     }
 
     //Methods
@@ -39,4 +39,6 @@ public class Question {
     public String getOption4(){
         return option4;
     }
+
+    public String getAnswer() {return answer; }
 }
