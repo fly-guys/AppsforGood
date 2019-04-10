@@ -69,6 +69,7 @@ public class QuizActivity extends AppCompatActivity {
 
         TextView questionView = (TextView) findViewById(R.id.questionID);
         Button option1 = (Button) findViewById(R.id.option1ID);
+        option1.setTag("Correct");
         Button option2 = (Button) findViewById(R.id.option2ID);
         Button option3 = (Button) findViewById(R.id.option3ID);
         Button option4 = (Button) findViewById(R.id.option4ID);
@@ -89,11 +90,12 @@ public class QuizActivity extends AppCompatActivity {
     public void checkCorrectButton1(View v){
         Button option1 = (Button)findViewById(R.id.option1ID);
 
-        if (questionList.get(1).getAnswer().equals(option1.getText())){
-
-
-            Intent intent = new Intent(this, Correct.class);
-            startActivity(intent);
+        if (option1.getTag().equals("Correct")){
+            option1.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    startActivity(new Intent(QuizActivity.this,Correct.class));
+                }
+            });
 
         }
 
