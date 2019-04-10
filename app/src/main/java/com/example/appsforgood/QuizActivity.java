@@ -88,13 +88,8 @@ public class QuizActivity extends AppCompatActivity {
 
 
     public void onClick(View v){
-        Button option1 = (Button)findViewById(R.id.option1ID);
-
-            option1.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    startActivity(new Intent(QuizActivity.this, Correct.class));
-                }
-            });
-
+        Intent intent = new Intent(this,Correct.class);
+        intent.putExtra("Correct", "correct");
+        startActivity(intent);
     }
 }
