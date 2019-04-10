@@ -24,6 +24,7 @@ public class Correct extends AppCompatActivity {
         answerView.setText(correct);
 
         Log.d(TAG,correct);
+        String stupid = "stupid";
 
 
 //        imageView=(ImageView)findViewById(R.id.Spinner);
