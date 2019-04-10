@@ -87,17 +87,14 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
-    public void checkCorrectButton1(View v){
+    public void onClick(View v){
         Button option1 = (Button)findViewById(R.id.option1ID);
 
-        if (option1.getTag().equals("Correct")){
             option1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    startActivity(new Intent(QuizActivity.this,Correct.class));
+                    startActivity(new Intent(QuizActivity.this, Correct.class));
                 }
             });
-
-        }
 
     }
 }
