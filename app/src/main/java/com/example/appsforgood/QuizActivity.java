@@ -61,30 +61,34 @@ public class QuizActivity extends AppCompatActivity {
             Log.wtf("MainActivity", "ERROR reading data on line " + line);
         }
 
-        questionMaker(questionList);
+        //questionMaker(questionList);
 
     }
 
-    public void questionMaker(ArrayList<Question> questionList){
+//    public void questionMaker(ArrayList<Question> questionList){
+//
+//        TextView questionView = (TextView) findViewById(R.id.questionID);
+//        Button option1 = (Button) findViewById(R.id.option1ID);
+//        option1.setTag("Correct");
+//        Button option2 = (Button) findViewById(R.id.option2ID);
+//        Button option3 = (Button) findViewById(R.id.option3ID);
+//        Button option4 = (Button) findViewById(R.id.option4ID);
+//
+//        questionView.setText(questionList.get(1).getQuestion());
+//        option1.setText(questionList.get(1).getOption1());
+//        option2.setText(questionList.get(1).getOption2());
+//        option3.setText(questionList.get(1).getOption3());
+//        option4.setText(questionList.get(1).getOption4());
+//
+//    }
 
-        TextView questionView = (TextView) findViewById(R.id.questionID);
-        Button option1 = (Button) findViewById(R.id.option1ID);
-        option1.setTag("Correct");
-        Button option2 = (Button) findViewById(R.id.option2ID);
-        Button option3 = (Button) findViewById(R.id.option3ID);
-        Button option4 = (Button) findViewById(R.id.option4ID);
+    //boolean clicked = false;
 
-        questionView.setText(questionList.get(1).getQuestion());
-        option1.setText(questionList.get(1).getOption1());
-        option2.setText(questionList.get(1).getOption2());
-        option3.setText(questionList.get(1).getOption3());
-        option4.setText(questionList.get(1).getOption4());
-
-    }
-
-    boolean clicked = false;
 
     public void onClick(View v) {
-        Button option1 = (Button) findViewById(R.id.option1ID);
+        Intent intent = new Intent(this, Correct.class);
+        intent.putExtra("Correct", "correct");
+        startActivity(intent);
+
     }
 }
