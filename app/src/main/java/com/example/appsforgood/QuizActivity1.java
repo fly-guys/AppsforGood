@@ -71,8 +71,17 @@ public class QuizActivity1 extends AppCompatActivity {
 
 
     public void onClick(View v){
-        Intent intent = new Intent(this,Correct.class);
-        intent.putExtra("Correct", "correct");
-        startActivity(intent);
+        Button button1 = (Button)findViewById(R.id.option1ID);
+
+        if(button1.getTag().equals("Correct")) {
+            Intent intent = new Intent(this, Correct.class);
+            intent.putExtra("Correct", "correct");
+            startActivity(intent);
+        }
+        else{
+            Intent intent = new Intent(this, Correct.class);
+            intent.putExtra("Correct", "incorrect");
+            startActivity(intent);
+        }
     }
 }
