@@ -86,15 +86,16 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
-    public void checkCorrectButton1(View v, Button option1){
+    public void checkCorrectButton1(View v){
+        Button option1 = (Button)findViewById(R.id.option1ID);
+
         if (questionList.get(1).getAnswer().equals(option1.getText())){
+
 
             Intent intent = new Intent(this, Correct.class);
             startActivity(intent);
 
         }
-
-
 
     }
 }
