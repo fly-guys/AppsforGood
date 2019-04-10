@@ -17,16 +17,19 @@ import java.util.ArrayList;
 public class QuizActivity1 extends AppCompatActivity {
 
     private ArrayList<Question> questionList = new ArrayList<>();
+    static int i=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz1);
-
-        readQData();
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        boolean b = bundle.getBoolean("Iterate");
+        readQData(b);
     }
 
-    public void readQData() {
+    public void readQData(boolean b) {
 
         InputStream is = getResources().openRawResource(R.raw.questions);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -46,11 +49,11 @@ public class QuizActivity1 extends AppCompatActivity {
             Log.wtf("MainActivity", "ERROR reading data on line " + line);
         }
 
-        questionMaker(questionList);
+        questionMaker(questionList, b);
 
     }
 
-    public void questionMaker(ArrayList<Question> questionList){
+    public void questionMaker(ArrayList<Question> questionList, boolean b){
 
         TextView questionView = (TextView) findViewById(R.id.questionID);
         Button option1 = (Button) findViewById(R.id.option1ID);
@@ -62,12 +65,15 @@ public class QuizActivity1 extends AppCompatActivity {
         Button option4 = (Button) findViewById(R.id.option4ID);
         option4.setTag("Incorrect");
 
-        questionView.setText(questionList.get(1).getQuestion());
-        option1.setText(questionList.get(1).getOption1());
-        option2.setText(questionList.get(1).getOption2());
-        option3.setText(questionList.get(1).getOption3());
-        option4.setText(questionList.get(1).getOption4());
-
+        while(b){
+            b = false;
+            questionView.setText(questionList.get(i).getQuestion());
+            option1.setText(questionList.get(i).getOption1());
+            option2.setText(questionList.get(i).getOption2());
+            option3.setText(questionList.get(i).getOption3());
+            option4.setText(questionList.get(i).getOption4());
+            i ++;
+        }
     }
 
     boolean clicked = false;
