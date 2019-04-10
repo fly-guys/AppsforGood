@@ -25,7 +25,13 @@ public class QuizActivity1 extends AppCompatActivity {
         setContentView(R.layout.activity_quiz1);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        boolean b = bundle.getBoolean("Iterate");
+        boolean b;
+        if(i > 0) {
+            b = bundle.getBoolean("Iterate");
+        }
+        else{
+            b = true;
+        }
         readQData(b);
     }
 
@@ -66,13 +72,14 @@ public class QuizActivity1 extends AppCompatActivity {
         option4.setTag("Incorrect");
 
         while(b){
-            b = false;
+
             questionView.setText(questionList.get(i).getQuestion());
             option1.setText(questionList.get(i).getOption1());
             option2.setText(questionList.get(i).getOption2());
             option3.setText(questionList.get(i).getOption3());
             option4.setText(questionList.get(i).getOption4());
             i ++;
+            b = false;
         }
     }
 
