@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Apps for Good</string>
+    <string name="answerRevealHeader">Your answer is...</string>
+    <string name="booleanAnswer" />
 </resources>

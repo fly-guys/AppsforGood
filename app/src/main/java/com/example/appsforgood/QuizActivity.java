@@ -84,12 +84,7 @@ public class QuizActivity extends AppCompatActivity {
 
     boolean clicked = false;
 
-
-
-
-    public void onClick(View v){
-        Intent intent = new Intent(this,Correct.class);
-        intent.putExtra("Correct", "correct");
-        startActivity(intent);
+    public void onClick(View v) {
+        Button option1 = (Button) findViewById(R.id.option1ID);
     }
 }
