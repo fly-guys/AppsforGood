@@ -72,22 +72,40 @@ public class QuizActivity1 extends AppCompatActivity {
         Button option4 = (Button) findViewById(R.id.option4ID);
         option4.setTag("Incorrect");
 
-//        ArrayList<Button> buttons = new ArrayList<>();
-//        buttons.add(option1);
-//        buttons.add(option2);
-//        buttons.add(option3);
-//        buttons.add(option4);
-//        int correctButton = (int)(Math.random()*3);
+        ArrayList<Button> buttons = new ArrayList<>();
+        buttons.add(option1);
+        buttons.add(option2);
+        buttons.add(option3);
+        buttons.add(option4);
+        int correctButton = (int)(Math.random()*3);
 
-        //buttons.get(correctButton).setTag("Correct");
+        buttons.get(correctButton).setTag("Correct");
 
 
         while(b){
             questionView.setText(questionList.get(i).getQuestion());
-            option1.setText(questionList.get(i).getOption1());
-            option2.setText(questionList.get(i).getOption2());
-            option3.setText(questionList.get(i).getOption3());
-            option4.setText(questionList.get(i).getOption4());
+            buttons.get(correctButton).setText(questionList.get(i).getOption1());
+            if(correctButton == 0) {
+                buttons.get(correctButton++).setText(questionList.get(i).getOption2());
+                buttons.get(correctButton + 3).setText(questionList.get(i).getOption3());
+                buttons.get(correctButton + 2).setText(questionList.get(i).getOption4());
+
+            }
+            else if (correctButton == 1) {
+                buttons.get(correctButton + 2).setText(questionList.get(i).getOption2());
+                buttons.get(correctButton++).setText(questionList.get(i).getOption3());
+                buttons.get(correctButton--).setText(questionList.get(i).getOption4());
+            }
+            else if (correctButton == 2) {
+                buttons.get(correctButton - 2).setText(questionList.get(i).getOption2());
+                buttons.get(correctButton--).setText(questionList.get(i).getOption3());
+                buttons.get(correctButton++).setText(questionList.get(i).getOption4());
+            }
+            else if (correctButton == 3) {
+                buttons.get(correctButton--).setText(questionList.get(i).getOption2());
+                buttons.get(correctButton - 3).setText(questionList.get(i).getOption3());
+                buttons.get(correctButton - 2).setText(questionList.get(i).getOption4());
+            }
 
             i++;
             b = false;
