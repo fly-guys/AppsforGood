@@ -112,8 +112,6 @@ public class QuizActivity1 extends AppCompatActivity {
         }
     }
 
-    boolean clicked = false;
-
 
     public void onClick(View v){
         Button button1 = (Button)findViewById(R.id.option1ID);
@@ -174,4 +172,5 @@ public class QuizActivity1 extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
 }
