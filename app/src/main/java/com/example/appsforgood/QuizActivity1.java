@@ -170,6 +170,7 @@ public class QuizActivity1 extends AppCompatActivity {
             Intent intent = new Intent(this, Correct.class);
             intent.putExtra("Correct", "incorrect");
             startActivity(intent);
+            //Hello Arun
         }
     }
 
