@@ -67,7 +67,7 @@ public class QuizActivity1 extends AppCompatActivity {
         i = (int) (Math.random()*(questionList.size()-1));
         TextView questionView = (TextView) findViewById(R.id.questionID);
         Button option1 = (Button) findViewById(R.id.option1ID);
-        option1.setTag("Correct");
+        option1.setTag("Incorrect");
         Button option2 = (Button) findViewById(R.id.option2ID);
         option2.setTag("Incorrect");
         Button option3 = (Button) findViewById(R.id.option3ID);
@@ -132,12 +132,12 @@ public class QuizActivity1 extends AppCompatActivity {
 
         if(button2.getTag().equals("Correct")) {
             Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "correct");
+            intent.putExtra("Correct", "Correct");
             startActivity(intent);
         }
         else{
             Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "incorrect");
+            intent.putExtra("Correct", "Incorrect");
             startActivity(intent);
         }
     }
@@ -147,12 +147,12 @@ public class QuizActivity1 extends AppCompatActivity {
 
         if(button3.getTag().equals("Correct")) {
             Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "correct");
+            intent.putExtra("Correct", "Correct");
             startActivity(intent);
         }
         else{
             Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "incorrect");
+            intent.putExtra("Correct", "Incorrect");
             startActivity(intent);
         }
     }
@@ -162,12 +162,12 @@ public class QuizActivity1 extends AppCompatActivity {
 
         if(button4.getTag().equals("Correct")) {
             Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "correct");
+            intent.putExtra("Correct", "Correct");
             startActivity(intent);
         }
         else{
             Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "incorrect");
+            intent.putExtra("Correct", "Incorrect");
             startActivity(intent);
             //Hello Arun
         }
