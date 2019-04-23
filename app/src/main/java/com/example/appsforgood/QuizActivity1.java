@@ -87,7 +87,6 @@ public class QuizActivity1 extends AppCompatActivity {
     }
 
     public void questionMaker(ArrayList<Question> questionList, boolean b){
-
         questionList.remove(i);
         i = (int) (Math.random()*(questionList.size()-1));
         TextView questionView = (TextView) findViewById(R.id.questionID);

@@ -14,7 +14,6 @@ public class Parser extends AppCompatActivity {
 
     static ArrayList<Question> questionList = new ArrayList<>();
 
-
     public ArrayList<Question> readQData() {
 
         InputStream is = getResources().openRawResource(R.raw.questions);
