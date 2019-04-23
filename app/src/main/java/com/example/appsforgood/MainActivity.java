@@ -34,13 +34,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+    }
 //        imageView=(ImageView)findViewById(R.id.Spinner);
 
-        Intent intent = new Intent(this, QuizActivity.class);
+    public void playButton(View v){
+        Intent intent = new Intent(this,QuizActivity1.class);
         startActivity(intent);
-
     }
+
+    public void learnButton(View v){
+        Intent intent = new Intent(this,LearnActivity.class);
+        startActivity(intent);
+    }
+
 
 //    public void readQData(){
 //
