@@ -8,6 +8,17 @@
     tools:context=".QuizActivity1">
 
     <TextView
+        android:id="@+id/timerID"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="15"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <TextView
         android:id="@+id/questionID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

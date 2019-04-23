@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 //    String correctAnswer = "8";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
