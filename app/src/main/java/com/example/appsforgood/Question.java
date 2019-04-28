@@ -1,44 +1,42 @@
 package com.example.appsforgood;
 
+import java.util.ArrayList;
+
 public class Question {
-    //Data
     private String question;
-    private String option1;
-    private String option2;
-    private String option3;
-    private String option4;
+    private ArrayList<String> choices = new ArrayList<>();
     private String answer;
 
-    //Constructors
-    public Question(String question, String option1, String option2, String option3, String option4){
+    public Question(String question, String choice1, String choice2, String choice3, String choice4, String answer){
         this.question = question;
-        this.option1 = option1;
-        this.option2 = option2;
-        this.option3 = option3;
-        this.option4 = option4;
-        answer = option1;
+        this.answer = answer;
+        choices.add(choice1);
+        choices.add(choice2);
+        choices.add(choice3);
+        choices.add(choice4);
     }
 
-    //Methods
     public String getQuestion(){
         return question;
     }
 
-    public String getOption1(){
-        return option1;
+    public String getChoice1(){
+        return choices.get(0);
     }
 
-    public String getOption2(){
-        return option2;
+    public String getChoice2(){
+        return choices.get(1);
     }
 
-    public String getOption3(){
-        return option3;
+    public String getChoice3(){
+        return choices.get(2);
     }
 
-    public String getOption4(){
-        return option4;
+    public String getChoice4(){
+        return choices.get(3);
     }
 
-    public String getAnswer() {return answer; }
+    public String getAnswer(){
+        return answer;
+    }
 }
