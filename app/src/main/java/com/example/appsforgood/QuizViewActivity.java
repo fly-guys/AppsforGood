@@ -114,9 +114,11 @@ public class QuizViewActivity extends AppCompatActivity {
 
     }
 
-    public void onClick1(View v){
-        Button button1 = (Button)findViewById(R.id.option1ID);
-        if(button1.getTag().equals("Correct")) {
+    public void onClick(View v){
+        Button button = (Button)findViewById(v.getId());
+        Log.d("Button ID--->>>", String.valueOf(v.getId()));
+        Log.d("Button Text--->>>", String.valueOf(button.getText()));
+        if(button.getTag().equals("Correct")) {
             Intent intent = new Intent(this, Correct.class);
             intent.putExtra("Correct", "Correct");
             timer.cancel();
@@ -130,51 +132,4 @@ public class QuizViewActivity extends AppCompatActivity {
         }
     }
 
-    public void onClick2(View v){
-        Button button2 = (Button)findViewById(R.id.option2ID);
-        if(button2.getTag().equals("Correct")) {
-            Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "Correct");
-            timer.cancel();
-            startActivity(intent);
-        }
-        else{
-            Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "Incorrect");
-            timer.cancel();
-            startActivity(intent);
-        }
-    }
-
-    public void onClick3(View v){
-        Button button3 = (Button)findViewById(R.id.option3ID);
-        if(button3.getTag().equals("Correct")) {
-            Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "Correct");
-            timer.cancel();
-            startActivity(intent);
-        }
-        else{
-            Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "Incorrect");
-            timer.cancel();
-            startActivity(intent);
-        }
-    }
-
-    public void onClick4(View v){
-        Button button4 = (Button)findViewById(R.id.option4ID);
-        if(button4.getTag().equals("Correct")) {
-            Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "Correct");
-            timer.cancel();
-            startActivity(intent);
-        }
-        else{
-            Intent intent = new Intent(this, Correct.class);
-            intent.putExtra("Correct", "Incorrect");
-            timer.cancel();
-            startActivity(intent);
-        }
-    }
 }
