@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class QuizViewActivity extends AppCompatActivity {
 
@@ -53,7 +54,9 @@ public class QuizViewActivity extends AppCompatActivity {
         buttons.add(option3);
         buttons.add(option4);
 
-        int correctButton = (int)(Math.random()*3);
+        Random randy = new Random();
+
+        int correctButton = randy.nextInt(4);
 
         buttons.get(correctButton).setText(question.getAnswer());
         if (correctButton == 0) {
