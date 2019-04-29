@@ -1,12 +1,58 @@
 package com.example.appsforgood;
 
 import android.app.Application;
+import android.util.Log;
 
-public class Controller extends Application
-{
-    private Question myData = new Question("Default", "Default", "Default", "Default", "Default");
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
-    public Question getData() {
-        return myData;
+public class Controller extends Application {
+    private ArrayList<Question> questionList = new ArrayList<>();
+
+    int i;
+
+    @Override
+    public void onCreate()  {
+
+        super.onCreate();
+
+        InputStream is = getResources().openRawResource(R.raw.questions);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+        String line = "";
+        try {
+            while ((line = reader.readLine()) != null) {
+
+                //Split by ","
+                String[] fields = line.split("~");
+
+                questionList.add(new Question(fields[0], fields[1], fields[2], fields[3], fields[4], fields[5]));
+
+            }
+        } catch (IOException io) {
+
+            Log.wtf("MainActivity", "ERROR reading data on line " + line);
+        }
+        int size = questionList.size();
+        Question temp;
+        int rand;
+        for(int k = questionList.size() - 1; k > 0; k--){
+            rand = (int)(Math.random()*size);
+            temp = questionList.get(rand);
+            questionList.set(rand,questionList.get(k));
+            questionList.set(k,temp);
+        }
+
+        i = questionList.size();
     }
+
+    public Question getQuestion(){
+        i--;
+        return questionList.get(i);
+    }
+
 }
+
