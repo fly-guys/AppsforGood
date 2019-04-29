@@ -10,30 +10,18 @@
         android:id="@+id/WelcomeID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Welcome to Bay State Politiquiz!"
-        android:textSize="50sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="604dp"
+        android:layout_marginTop="396dp"
         android:onClick="playButton"
         android:text="Play"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,13 +35,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="247dp"
         android:layout_marginLeft="247dp"
-        android:layout_marginTop="604dp"
+        android:layout_marginTop="396dp"
         android:layout_marginEnd="76dp"
         android:layout_marginRight="76dp"
         android:onClick="learnButton"
         android:text="Learn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
