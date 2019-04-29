@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
 //    public void readQData(){
 //
 //        InputStream is = getResources().openRawResource(R.raw.questions);

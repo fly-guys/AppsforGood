@@ -8,13 +8,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Parser extends AppCompatActivity {
+public class RepresentativeParser extends AppCompatActivity {
 
-    static ArrayList<Question> questionList = new ArrayList<>();
+    static ArrayList<RepObject> repList = new ArrayList<>();
 
-    public ArrayList<Question> readQData() {
+    public ArrayList<RepObject> readRData() {
 
-        InputStream is = getResources().openRawResource(R.raw.questions);
+        InputStream is = getResources().openRawResource(R.raw.profiles);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
         String line = "";
@@ -24,7 +24,7 @@ public class Parser extends AppCompatActivity {
                 //Split by ","
                 String[] fields = line.split("~");
 
-                questionList.add(new Question(fields[0], fields[1], fields[2], fields[3], fields[4]));
+                repList.add(new RepObject(fields[0], fields[1], fields[2], fields[3],fields[4],fields[5]));
 
             }
         } catch (IOException io) {
@@ -32,13 +32,13 @@ public class Parser extends AppCompatActivity {
             Log.wtf("MainActivity", "ERROR reading data on line " + line);
         }
 
-        return questionList;
+        return repList;
 
     }
 
-    public ArrayList<Question> getQuestionList(){
-        return questionList;
+    public ArrayList<RepObject> getRepList(){
+
+        return repList;
     }
 
 }
-

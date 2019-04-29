@@ -13,13 +13,19 @@ public class LearnActivity extends AppCompatActivity {
         setContentView(R.layout.activity_learn);
     }
 
-    public void learnRepsButton (View v){
-        Intent intent = new Intent(this,Representatives.class);
+    public void goToCollage (View v){
+        Intent intent = new Intent(this,RepCollage.class);
         startActivity(intent);
     }
 
     public void learnBillsButton (View v){
         Intent intent = new Intent(this,Bills.class);
         startActivity(intent);
+    }
+
+    public void backButton(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
     }
 }
