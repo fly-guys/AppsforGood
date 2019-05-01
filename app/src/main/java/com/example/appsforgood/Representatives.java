@@ -95,9 +95,9 @@ public class Representatives extends AppCompatActivity {
       }
         Intent intent = new Intent(this, Representatives.class);
         startActivity(intent);
-        }
+    }
 
-        public void nextRep (View v){
+    public void nextRep (View v){
           if (j == repList.size()-1) {
               j = 0;
           }
@@ -106,11 +106,11 @@ public class Representatives extends AppCompatActivity {
           }
             Intent intent = new Intent(this, Representatives.class);
             startActivity(intent);
-        }
+    }
 
-        public void toCollage (View v){
+    public void toCollage (View v){
             Intent intent = new Intent(this, RepCollage.class);
             startActivity(intent);
-        }
+    }
 
 }

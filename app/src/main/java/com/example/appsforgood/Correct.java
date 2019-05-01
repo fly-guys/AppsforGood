@@ -18,6 +18,7 @@ public class Correct extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         String answer = bundle.getString("Correct");
+        int computerScore = bundle.getInt("ComputerScore");
 
         TextView answerView = (TextView)findViewById(R.id.correctID);
         answerView.setText(answer);
@@ -28,6 +29,8 @@ public class Correct extends AppCompatActivity {
 
         TextView scoreView = (TextView)findViewById(R.id.scoreID);
         scoreView.setText(String.valueOf(score));
+        TextView computerScoreView = (TextView) findViewById(R.id.computerScoreID);
+        computerScoreView.setText(String.valueOf(computerScore));
 
     }
 
