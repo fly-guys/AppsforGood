@@ -14,6 +14,8 @@ public class ScoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
+        QuizViewActivity quiz = new QuizViewActivity();
+
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
@@ -30,6 +32,8 @@ public class ScoreActivity extends AppCompatActivity {
         if(score > computerScore){
             winner.setImageResource(getResources().getIdentifier("@drawable/win", null, this.getPackageName()));;
         }
+
+//        quiz.onDestroy();
 
     }
 
