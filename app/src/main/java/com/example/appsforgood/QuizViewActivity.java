@@ -36,6 +36,7 @@ public class QuizViewActivity extends AppCompatActivity {
             Intent scoreIntent = new Intent(this, ScoreActivity.class);
             scoreIntent.putExtra("PlayerScore", playerScore);
             scoreIntent.putExtra("ComputerScore", computerScore);
+            finish();
             startActivity(scoreIntent);
         }
         else {
@@ -123,6 +124,7 @@ public class QuizViewActivity extends AppCompatActivity {
                     Log.d("timerTag", "onFinishMethodOfTimer");
                     Intent i = new Intent(getApplicationContext(), Correct.class);
                     i.putExtra("Correct", "Time's Up");
+                    onStop();
                     startActivity(i);
                 }
             }.start();
@@ -156,5 +158,15 @@ public class QuizViewActivity extends AppCompatActivity {
 
     public void onDestroy(){
         super.onDestroy();
+
+    }
+
+    public void onStop(){
+
+        super.onStop();
+    }
+
+    public void reset(){
+
     }
 }
