@@ -33,6 +33,7 @@ public class QuizViewActivity extends AppCompatActivity {
         if(bundle.getString("New Game").equals("New Game")){
             DifficultyPicker.refresh();
             aController.reset();
+            //pushing reset code
         }
 
 
