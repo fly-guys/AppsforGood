@@ -2,51 +2,65 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".Bills">
 
-    <TextView
-        android:id="@+id/billsHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="4dp"
-        android:text="Bills/Laws"
-        android:textSize="36sp"
+    <LinearLayout
+        android:layout_width="585dp"
+        android:layout_height="946dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/lawImage"
-        android:layout_width="412dp"
-        android:layout_height="339dp"
-        android:layout_marginTop="84dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bills" />
+        <TextView
+            android:id="@+id/billsLawsHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:text="Bills and Laws"/>
 
-    <TextView
-        android:id="@+id/lawDescription"
-        android:layout_width="596dp"
-        android:layout_height="209dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="437dp"
-        android:text='The legal system of Massachusetts is based on the common law. Like all U.S. states except Louisiana, Massachusetts has a reception statute providing for the "reception" of English law. All statutes, regulations, and ordinances are subject to judicial review. Pursuant to common law tradition, the courts of Massachusetts have developed a large body of case law through the decisions of the Massachusetts Supreme Judicial Court and Massachusetts Appeals Court. The decisions of the Massachusetts Supreme Judicial Court, the Massachusetts Appeals Court, and the Appellate Divisions of the Massachusetts District Court and the Boston Municipal Court departments, which are published in the Massachusetts Reports, Massachusetts Appeals Court Reports, and Massachusetts Appellate Division Reports, respectively.[3][4] The Massachusetts Law Reporter publishes decisions from the Massachusetts Superior Court.[4][5] MassCourts is the case management system used by the courts.[6]'
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/billsPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/bills" />
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="684dp"
-        android:onClick="backButton"
-        android:text="Back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/generalLaws"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:onClick="onClickGeneralLaws"
+            android:text="General Laws" />
+
+        <Button
+            android:id="@+id/sessionsLaws"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:onClick="onClickSessionsLaws"
+            android:text="Sessions Laws" />
+
+        <Button
+            android:id="@+id/constitution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:onClick="onClickConstitution"
+            android:text="Constitution" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:text="Back" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

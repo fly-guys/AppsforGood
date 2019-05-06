@@ -134,7 +134,7 @@ public class QuizViewActivity extends AppCompatActivity {
     public void onClick(View v){
         Button button = (Button)findViewById(v.getId());
         Random randy = new Random();
-        if(randy.nextInt(4) < DifficultyPicker.i){
+        if(randy.nextInt(10) < DifficultyPicker.i){
             computerScore++;
         }
 
