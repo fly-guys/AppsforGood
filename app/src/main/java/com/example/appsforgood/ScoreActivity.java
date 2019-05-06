@@ -33,7 +33,6 @@ public class ScoreActivity extends AppCompatActivity {
             winner.setImageResource(getResources().getIdentifier("@drawable/win", null, this.getPackageName()));;
         }
 
-//        quiz.onDestroy();
 
     }
 

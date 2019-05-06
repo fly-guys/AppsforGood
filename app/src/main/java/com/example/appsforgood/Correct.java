@@ -40,4 +40,8 @@ public class Correct extends AppCompatActivity {
         intent.putExtra("New Game","Same Game");
         startActivity(intent);
     }
+
+    public void reset(){
+        score = 0;
+    }
 }

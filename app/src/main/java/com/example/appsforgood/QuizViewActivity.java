@@ -31,6 +31,8 @@ public class QuizViewActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         int playerScore = (Integer) bundle.getInt("Score");
         if(bundle.getString("New Game").equals("New Game")){
+            computerScore = 0;
+            Correct.score = 0;
             DifficultyPicker.refresh();
             aController.reset();
             //pushing reset code
