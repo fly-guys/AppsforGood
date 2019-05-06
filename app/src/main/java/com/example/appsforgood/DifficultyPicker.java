@@ -18,6 +18,9 @@ public class DifficultyPicker extends AppCompatActivity implements View.OnClickL
     static Button expert;
     static Button insane;
 
+    public static void refresh() {
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,13 +63,19 @@ public class DifficultyPicker extends AppCompatActivity implements View.OnClickL
         }
 
         Intent intent = new Intent(this, QuizViewActivity.class);
-        intent.putExtra("Score",i);
+        intent.putExtra("Score",0);
+        intent.putExtra("New Game","New Game");
         startActivity(intent);
     }
 
     public void backButton(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void reset(AppCompatActivity appCompatActivity){
+        appCompatActivity.finish();
+        appCompatActivity.recreate();
     }
 
 }

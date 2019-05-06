@@ -17,6 +17,7 @@ public class QuizViewActivity extends AppCompatActivity {
     private Controller aController;
     static CountDownTimer timer;
     static int computerScore = 0;
+    DifficultyPicker difficultyPicker = new DifficultyPicker();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,16 @@ public class QuizViewActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        aController = (Controller) getApplicationContext();
+
         Bundle bundle = intent.getExtras();
         int playerScore = (Integer) bundle.getInt("Score");
+        if(bundle.getString("New Game").equals("New Game")){
+            DifficultyPicker.refresh();
+            aController.reset();
+        }
 
-        aController = (Controller) getApplicationContext();
+
 
         Question question = aController.getQuestion();
 
@@ -166,7 +173,4 @@ public class QuizViewActivity extends AppCompatActivity {
         super.onStop();
     }
 
-    public void reset(){
-
-    }
 }

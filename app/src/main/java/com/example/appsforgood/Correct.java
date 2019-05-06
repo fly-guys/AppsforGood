@@ -37,6 +37,7 @@ public class Correct extends AppCompatActivity {
     public void nextButton(View v){
         Intent intent = new Intent(this,QuizViewActivity.class);
         intent.putExtra("Score",score);
+        intent.putExtra("New Game","Same Game");
         startActivity(intent);
     }
 }

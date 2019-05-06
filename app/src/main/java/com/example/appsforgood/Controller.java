@@ -60,5 +60,10 @@ public class Controller extends Application {
         }
     }
 
+    public void reset(){
+        i = 0;
+        onCreate();
+    }
+
 }
 
