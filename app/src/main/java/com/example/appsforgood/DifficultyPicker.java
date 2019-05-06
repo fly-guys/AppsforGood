@@ -28,6 +28,7 @@ public class DifficultyPicker extends AppCompatActivity implements View.OnClickL
         intermediate = (Button) findViewById(R.id.intermediateButton);
         expert = (Button) findViewById(R.id.expertButton);
         insane = (Button) findViewById(R.id.insaneButton);
+        //stuff
 
         beginner.setOnClickListener(this);
         intermediate.setOnClickListener(this);
