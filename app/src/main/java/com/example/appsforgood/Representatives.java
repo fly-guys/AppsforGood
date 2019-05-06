@@ -80,7 +80,7 @@ public class Representatives extends AppCompatActivity {
             years.setText("Years in Office: " + repList.get(j).getyearsInOffice());
             descript.setText(repList.get(j).getDescription());
             image.setImageResource(getResources().getIdentifier("@drawable/" + repList.get(j).getImage(), null, this.getPackageName()));
-            Toast.makeText(getApplicationContext(), Integer.toString(j), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), Integer.toString(j), Toast.LENGTH_SHORT).show();
             //i++;
             b = false;
         }

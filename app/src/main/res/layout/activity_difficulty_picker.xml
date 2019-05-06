@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DifficultyPicker">
+
+    <TextView
+        android:id="@+id/DifficultyHeader"
+        android:layout_width="598dp"
+        android:layout_height="124dp"
+        android:text="Please select a level of difficulty:"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/easyImage"
+        android:layout_width="104dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="344dp"
+        android:layout_marginLeft="344dp"
+        android:layout_marginTop="196dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/easy" />
+
+    <ImageView
+        android:id="@+id/intermediateImage"
+        android:layout_width="88dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginLeft="352dp"
+        android:layout_marginTop="376dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/intermediate" />
+
+    <ImageView
+        android:id="@+id/expertImage"
+        android:layout_width="85dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginLeft="352dp"
+        android:layout_marginTop="552dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/expert" />
+
+    <ImageView
+        android:id="@+id/insaneImage"
+        android:layout_width="85dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginLeft="352dp"
+        android:layout_marginTop="724dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/insane" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="332dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <Button
+            android:id="@+id/beginnerButton"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="250dp"
+            android:onClick="onClick"
+            android:text="Beginner" />
+
+        <Button
+            android:id="@+id/intermediateButton"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="250dp"
+            android:onClick="onClick"
+            android:text="Intermediate" />
+
+        <Button
+            android:id="@+id/expertButton"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="250dp"
+            android:onClick="onClick"
+            android:text="Advanced" />
+
+        <Button
+            android:id="@+id/insaneButton"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="250dp"
+            android:onClick="onClick"
+            android:text="Insane" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

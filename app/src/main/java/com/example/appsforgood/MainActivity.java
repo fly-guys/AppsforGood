@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void playButton(View v){
-        Intent intent = new Intent(this,QuizViewActivity.class);
+    public void nextButton(View v){
+        Intent intent = new Intent(this,DifficultyPicker.class);
         intent.putExtra("Score",4);
         startActivity(intent);
     }
