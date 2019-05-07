@@ -21,11 +21,15 @@ public class RepCollage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rep_collage);
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        String next = bundle.getString("Next");
+
         controller = (Controller) getApplicationContext();
 
         controller.createReps();
 
-        RepObject rep = controller.getReps();
+        RepObject rep = controller.getReps(next);
 
         String image;
         image = rep.getImage();
@@ -35,27 +39,27 @@ public class RepCollage extends AppCompatActivity {
         Context context = repPicture.getContext();
         int id = context.getResources().getIdentifier(image, "drawable", context.getPackageName());
         repPicture.setImageResource(id);
-        Log.d("RepPic------------------------->>>>>","Set Picture");
+        Log.d("RepPic->>>>>","Set Picture");
 
         TextView name = (TextView) findViewById(R.id.repName);
         name.setText(rep.getrepName());
-        Log.d("RepName------------------------->>>>>","Set Name");
+        Log.d("RepName---->>>>>","Set Name");
 
         TextView position = (TextView) findViewById(R.id.repPosition);
         position.setText(rep.getposition());
-        Log.d("RepPos------------------------->>>>>","Set Pos");
+        Log.d("RepPos--->>>>>","Set Pos");
 
         TextView party = (TextView) findViewById(R.id.repParty);
         party.setText("Party: " + rep.getparty());
-        Log.d("RepParty------------------------->>>>>","Set Party");
+        Log.d("RepParty---->>>>>","Set Party");
 
         TextView years = (TextView) findViewById(R.id.repYears);
         years.setText("Years in Office: " + rep.getyearsInOffice() + " years");
-        Log.d("RepYears------------------------->>>>>","Set Years");
+        Log.d("RepYears-->>>>>","Set Years");
 
         TextView description = (TextView) findViewById(R.id.repDescription);
         description.setText(rep.getDescription());
-        Log.d("RepDes------------------------->>>>>","Set Descrip");
+        Log.d("RepDes----->>>>>","Set Descrip");
 
     }
 
@@ -67,7 +71,15 @@ public class RepCollage extends AppCompatActivity {
 
     public void nextRep(View v){
         Intent intent = new Intent(this,RepCollage.class);
+        intent.putExtra("Next","Next");
         startActivity(intent);
+    }
+
+    public void prevRep(View v){
+        Intent intent = new Intent(this,RepCollage.class);
+        intent.putExtra("Next","Previous");
+        startActivity(intent);
+
     }
 
 }

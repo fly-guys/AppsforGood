@@ -15,6 +15,7 @@ public class LearnActivity extends AppCompatActivity {
 
     public void goToCollage (View v){
         Intent intent = new Intent(this,RepCollage.class);
+        intent.putExtra("Next","Next");
         startActivity(intent);
     }
 

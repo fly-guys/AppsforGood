@@ -93,8 +93,14 @@ public class Controller extends Application {
 
     }
 
-    public RepObject getReps(){
-        j--;
+    public RepObject getReps(String next){
+
+        if(next.equals("Next")) {
+            j--;
+        }
+        else{
+            j++;
+        }
         if(j >= 0) {
             return representatives.get(j);
         }

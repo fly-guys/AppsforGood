@@ -63,6 +63,7 @@
                 android:id="@+id/prev"
                 android:layout_width="127dp"
                 android:layout_height="wrap_content"
+                android:onClick="prevRep"
                 android:text="Previous" />
 
             <Button
