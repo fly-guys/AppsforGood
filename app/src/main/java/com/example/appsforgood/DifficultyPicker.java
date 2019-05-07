@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import static com.example.appsforgood.RepCollage.baker;
-
 public class DifficultyPicker extends AppCompatActivity implements View.OnClickListener {
 
     static int i;

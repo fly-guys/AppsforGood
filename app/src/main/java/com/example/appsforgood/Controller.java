@@ -11,8 +11,10 @@ import java.util.ArrayList;
 
 public class Controller extends Application {
     private ArrayList<Question> questionList = new ArrayList<>();
+    private ArrayList<RepObject> representatives = new ArrayList<>();
 
     int i;
+    int j;
 
     @Override
     public void onCreate()  {
@@ -47,6 +49,8 @@ public class Controller extends Application {
         }
 
         i = questionList.size();
+        createReps();
+        j = representatives.size();
     }
 
     public Question getQuestion(){
@@ -63,6 +67,41 @@ public class Controller extends Application {
     public void reset(){
         i = 0;
         onCreate();
+    }
+
+    public void createReps(){
+
+        InputStream is = getResources().openRawResource(R.raw.profiles);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+        String line = "";
+        try {
+            while ((line = reader.readLine()) != null) {
+
+                //Split by ","
+                String[] fields = line.split("~");
+
+                representatives.add(new RepObject(fields[0], fields[1], fields[2], fields[3], fields[4], fields[5]));
+
+            }
+        } catch (IOException io) {
+
+            Log.wtf("MainActivity", "ERROR reading data on line " + line);
+        }
+
+
+
+    }
+
+    public RepObject getReps(){
+        j--;
+        if(j >= 0) {
+            return representatives.get(j);
+        }
+        else{
+            j = representatives.size() - 1;
+            return representatives.get(j);
+        }
     }
 
 }
