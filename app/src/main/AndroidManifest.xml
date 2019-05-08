@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SuddenDeathActivity"></activity>
+        <activity android:name=".InstructionsActivity"></activity>
+        <activity android:name=".SuddenDeathActivity" />
         <activity android:name=".LegislativeActivity" />
         <activity android:name=".DifficultyPicker" />
         <activity android:name=".ScoreActivity" />
