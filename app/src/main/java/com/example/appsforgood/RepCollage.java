@@ -42,19 +42,19 @@ public class RepCollage extends AppCompatActivity {
         Log.d("RepPic->>>>>","Set Picture");
 
         TextView name = (TextView) findViewById(R.id.repName);
-        name.setText(rep.getrepName());
+        name.setText(rep.getRepName());
         Log.d("RepName---->>>>>","Set Name");
 
         TextView position = (TextView) findViewById(R.id.repPosition);
-        position.setText(rep.getposition());
+        position.setText(rep.getPosition());
         Log.d("RepPos--->>>>>","Set Pos");
 
         TextView party = (TextView) findViewById(R.id.repParty);
-        party.setText("Party: " + rep.getparty());
+        party.setText("Party: " + rep.getParty());
         Log.d("RepParty---->>>>>","Set Party");
 
         TextView years = (TextView) findViewById(R.id.repYears);
-        years.setText("Years in Office: " + rep.getyearsInOffice() + " years");
+        years.setText("Years in Office: " + rep.getYearsInOffice() + " years");
         Log.d("RepYears-->>>>>","Set Years");
 
         TextView description = (TextView) findViewById(R.id.repDescription);

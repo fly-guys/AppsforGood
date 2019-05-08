@@ -27,10 +27,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
-    public void nextButton(View v){
+    public void playButton(View v){
         Intent intent = new Intent(this,DifficultyPicker.class);
         intent.putExtra("Score",4);
         startActivity(intent);

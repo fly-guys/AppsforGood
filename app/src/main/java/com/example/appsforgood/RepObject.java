@@ -24,22 +24,20 @@ public class RepObject {
 
     //Methods
 
-    public String getrepName() {
-
+    public String getRepName() {
         return repName;
     }
 
-    public String getposition() {
-
+    public String getPosition() {
         return position;
     }
 
-    public String getparty() {
+    public String getParty() {
 
         return party;
     }
 
-    public String getyearsInOffice() {
+    public String getYearsInOffice() {
 
         return yearsInOffice;
     }

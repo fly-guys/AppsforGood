@@ -15,7 +15,6 @@ public class Bills extends AppCompatActivity {
     }
 
     public void backButton(View v) {
-
         Intent intent = new Intent(this, LearnActivity.class);
         startActivity(intent);
 

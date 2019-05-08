@@ -18,9 +18,15 @@ public class Controller extends Application {
 
     @Override
     public void onCreate()  {
-
         super.onCreate();
 
+        createQuestions();
+        i = questionList.size();
+        createReps();
+        j = representatives.size();
+    }
+
+    public void createQuestions(){
         InputStream is = getResources().openRawResource(R.raw.questions);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
@@ -38,19 +44,13 @@ public class Controller extends Application {
 
             Log.wtf("MainActivity", "ERROR reading data on line " + line);
         }
-        int size = questionList.size();
-        Question temp;
-        int rand;
+
         for(int k = questionList.size() - 1; k > 0; k--){
-            rand = (int)(Math.random()*size);
-            temp = questionList.get(rand);
+            int rand = (int)Math.random()*(k+1);
             questionList.set(rand,questionList.get(k));
-            questionList.set(k,temp);
+            questionList.set(k,questionList.get(rand));
         }
 
-        i = questionList.size();
-        createReps();
-        j = representatives.size();
     }
 
     public Question getQuestion(){
@@ -88,9 +88,6 @@ public class Controller extends Application {
 
             Log.wtf("MainActivity", "ERROR reading data on line " + line);
         }
-
-
-
     }
 
     public RepObject getReps(String next){

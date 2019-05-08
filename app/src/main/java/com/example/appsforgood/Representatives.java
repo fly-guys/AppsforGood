@@ -74,10 +74,10 @@ public class Representatives extends AppCompatActivity {
             TextView descript = (TextView) findViewById(R.id.description);
             ImageView image = (ImageView) findViewById(R.id.repImage);
 
-            rep.setText(repList.get(j).getrepName());
-            pos.setText(repList.get(j).getposition());
-            part.setText("Party: " + repList.get(j).getparty());
-            years.setText("Years in Office: " + repList.get(j).getyearsInOffice());
+            rep.setText(repList.get(j).getRepName());
+            pos.setText(repList.get(j).getPosition());
+            part.setText("Party: " + repList.get(j).getParty());
+            years.setText("Years in Office: " + repList.get(j).getYearsInOffice());
             descript.setText(repList.get(j).getDescription());
             image.setImageResource(getResources().getIdentifier("@drawable/" + repList.get(j).getImage(), null, this.getPackageName()));
             //Toast.makeText(getApplicationContext(), Integer.toString(j), Toast.LENGTH_SHORT).show();
