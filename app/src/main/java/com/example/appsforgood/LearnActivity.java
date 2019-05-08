@@ -27,6 +27,10 @@ public class LearnActivity extends AppCompatActivity {
     public void backButton(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
 
+    public void legislativeBranch(View v){
+        Intent intent = new Intent(this, LegislativeActivity.class);
+        startActivity(intent);
     }
 }
