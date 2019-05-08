@@ -26,6 +26,10 @@ public class Correct extends AppCompatActivity {
         if(answerView.getText().equals("Correct")){
             score++;
         }
+        else{
+            TextView correctAnswerView = (TextView) findViewById(R.id.correctAnswerID);
+            correctAnswerView.setText("Correct Answer: " + bundle.getString("CorrectAnswer"));
+        }
 
         TextView scoreView = (TextView)findViewById(R.id.scoreID);
         scoreView.setText(String.valueOf(score));

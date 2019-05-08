@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Controller extends Application {
     private ArrayList<Question> questionList = new ArrayList<>();
@@ -45,23 +47,30 @@ public class Controller extends Application {
             Log.wtf("MainActivity", "ERROR reading data on line " + line);
         }
 
-        for(int k = questionList.size() - 1; k > 0; k--){
-            int rand = (int)Math.random()*(k+1);
-            questionList.set(rand,questionList.get(k));
-            questionList.set(k,questionList.get(rand));
-        }
+        Collections.shuffle(questionList);
+
+//        for(int k = questionList.size() - 1; k > 0; k--){
+//            int rand = (int)Math.random()*(k+1);
+//            questionList.set(rand,questionList.get(k));
+//            questionList.set(k,questionList.get(rand));
+//        }
 
     }
 
     public Question getQuestion(){
         i--;
-        if(i > questionList.size() - 11) {
+        if(i > questionList.size() - 2) {
             return questionList.get(i);
         }
         else{
             Question nullQuestion = new Question("null","null","null","null","null","null");
             return nullQuestion;
         }
+    }
+
+    public Question getSuddenDeathQuestion(){
+        i--;
+        return questionList.get(i);
     }
 
     public void reset(){

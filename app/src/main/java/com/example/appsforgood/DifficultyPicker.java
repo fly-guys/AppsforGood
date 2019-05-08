@@ -55,7 +55,7 @@ public class DifficultyPicker extends AppCompatActivity implements View.OnClickL
                 //Toast.makeText(getApplicationContext(), "Expert is clicked " + Integer.toString(i), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.insaneButton:
-                i = 9;
+                i = 10;
                 //Toast.makeText(getApplicationContext(), "Insane is clicked " + Integer.toString(i), Toast.LENGTH_SHORT).show();
                 break;
         }

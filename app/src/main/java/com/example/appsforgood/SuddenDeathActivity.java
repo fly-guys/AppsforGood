@@ -12,55 +12,32 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class QuizViewActivity extends AppCompatActivity {
+public class SuddenDeathActivity extends AppCompatActivity {
 
     private Controller aController;
     static CountDownTimer timer;
     static int computerScore = 0;
     DifficultyPicker difficultyPicker = new DifficultyPicker();
-    String correctAnswer = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_view);
+        setContentView(R.layout.activity_sudden_death);
 
         Intent intent = getIntent();
 
+        Log.d("Got to QuestionView","Got to QuestionView");
         aController = (Controller) getApplicationContext();
 
         Bundle bundle = intent.getExtras();
-        int playerScore = (Integer) bundle.getInt("Score");
-        if(bundle.getString("New Game").equals("New Game")){
-            computerScore = 0;
-            Correct.score = 0;
-            DifficultyPicker.refresh();
-            aController.reset();
-            //pushing reset code
-        }
+        int playerScore = (Integer) bundle.getInt("Player Score");
+        computerScore = (Integer) bundle.getInt("Computer Score");
 
-        Question question = aController.getQuestion();
+        Question question;
+        question = aController.getSuddenDeathQuestion();
 
-        Log.d("Got Question","Got Question");
-//        if(bundle.getString("New Game").equals("Sudden Death")){
-//            Log.d("SuddenDeath-------->","Got to Sudden Death");
-//            question = aController.getSuddenDeathQuestion();
-//        }
 
-        if(question.getAnswer().equals("null")){
-//            if(playerScore == computerScore){
-//               question = aController.getSuddenDeathQuestion();
-//               displayQuestion(question);
-//            }
-            Intent scoreIntent = new Intent(this, ScoreActivity.class);
-            scoreIntent.putExtra("PlayerScore", playerScore);
-            scoreIntent.putExtra("ComputerScore", computerScore);
-            finish();
-            startActivity(scoreIntent);
-        }
-        else {
-            displayQuestion(question);
-        }
+        displayQuestion(question);
     }
 
     public void displayQuestion(Question question){
@@ -133,7 +110,6 @@ public class QuizViewActivity extends AppCompatActivity {
             option4.setTag("Correct");
 
         }
-        correctAnswer = question.getAnswer();
 
         timer = new CountDownTimer(16000, 1000) {
 
@@ -167,7 +143,6 @@ public class QuizViewActivity extends AppCompatActivity {
         if(button.getTag().equals("Correct")) {
             Intent intent = new Intent(this, Correct.class);
             intent.putExtra("Correct", "Correct");
-            intent.putExtra("CorrectAnswer","");
             intent.putExtra("ComputerScore",computerScore);
             timer.cancel();
             startActivity(intent);
@@ -175,11 +150,11 @@ public class QuizViewActivity extends AppCompatActivity {
         else{
             Intent intent = new Intent(this, Correct.class);
             intent.putExtra("Correct", "Incorrect");
-            intent.putExtra("CorrectAnswer",correctAnswer);
             intent.putExtra("ComputerScore",computerScore);
             timer.cancel();
             startActivity(intent);
         }
     }
+
 
 }
