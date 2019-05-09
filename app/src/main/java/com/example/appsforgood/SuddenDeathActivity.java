@@ -134,21 +134,18 @@ public class SuddenDeathActivity extends AppCompatActivity {
     public void onClick(View v){
         Button button = (Button)findViewById(v.getId());
         Random randy = new Random();
-        if(randy.nextInt(10) < DifficultyPicker.i){
-            computerScore++;
-        }
 
         Log.d("Button ID--->>>", String.valueOf(v.getId()));
         Log.d("Button Text--->>>", String.valueOf(button.getText()));
         if(button.getTag().equals("Correct")) {
-            Intent intent = new Intent(this, Correct.class);
+            Intent intent = new Intent(this, SuddenDeathCorrect.class);
             intent.putExtra("Correct", "Correct");
             intent.putExtra("ComputerScore",computerScore);
             timer.cancel();
             startActivity(intent);
         }
         else{
-            Intent intent = new Intent(this, Correct.class);
+            Intent intent = new Intent(this, SuddenDeathCorrect.class);
             intent.putExtra("Correct", "Incorrect");
             intent.putExtra("ComputerScore",computerScore);
             timer.cancel();

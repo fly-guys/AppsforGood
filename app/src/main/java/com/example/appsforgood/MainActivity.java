@@ -25,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void instructionsButton(View v){
-        Intent intent = new Intent(this, InstructionsActivity.class);
+        Intent intent = new Intent(this,InstructionsActivity.class);
         startActivity(intent);
+
     }
 
 

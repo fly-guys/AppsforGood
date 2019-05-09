@@ -41,9 +41,9 @@ public class ScoreActivity extends AppCompatActivity {
             winner.setImageResource(getResources().getIdentifier("@drawable/tie",null,this.getPackageName()));
 
             Button suddenDeath = (Button) findViewById(R.id.backButton);
-            suddenDeath.setText("Sudden Death Question");
+            suddenDeath.setVisibility(View.GONE);
 
-            timer = new CountDownTimer(16000, 1000) {
+            timer = new CountDownTimer(6000, 1000) {
 
                 TextView timerView = (TextView) findViewById(R.id.timerID);
 

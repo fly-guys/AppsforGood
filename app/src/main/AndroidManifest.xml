@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".InstructionsActivity"></activity>
+        <activity android:name=".SuddenDeathCorrect" />
         <activity android:name=".SuddenDeathActivity" />
         <activity android:name=".LegislativeActivity" />
         <activity android:name=".DifficultyPicker" />

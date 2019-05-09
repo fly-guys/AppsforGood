@@ -59,7 +59,7 @@ public class Controller extends Application {
 
     public Question getQuestion(){
         i--;
-        if(i > questionList.size() - 2) {
+        if(i > questionList.size() - 11) {
             return questionList.get(i);
         }
         else{
