@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DifficultyPicker">
+    tools:context=".DifficultyPicker"
+    android:background="@color/backgroundColor">
 
     <TextView
         android:id="@+id/DifficultyHeader"
@@ -12,6 +13,7 @@
         android:layout_height="124dp"
         android:text="Please select a level of difficulty:"
         android:textSize="30sp"
+        android:textColor="#05C7F3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

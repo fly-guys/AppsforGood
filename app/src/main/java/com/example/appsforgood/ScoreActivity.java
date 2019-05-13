@@ -36,6 +36,12 @@ public class ScoreActivity extends AppCompatActivity {
 
         if(score > computerScore){
             winner.setImageResource(getResources().getIdentifier("@drawable/win", null, this.getPackageName()));;
+            TextView timerView = (TextView) findViewById(R.id.timerID);
+            timerView.setVisibility(View.GONE);
+        }
+        if(score < computerScore){
+            TextView timerView = (TextView) findViewById(R.id.timerID);
+            timerView.setVisibility(View.GONE);
         }
         else if (score == computerScore){
             winner.setImageResource(getResources().getIdentifier("@drawable/tie",null,this.getPackageName()));
