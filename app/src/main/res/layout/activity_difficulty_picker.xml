@@ -13,7 +13,7 @@
         android:layout_height="124dp"
         android:text="Please select a level of difficulty:"
         android:textSize="30sp"
-        android:textColor="#05C7F3"
+        android:textColor="#D3E9F1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

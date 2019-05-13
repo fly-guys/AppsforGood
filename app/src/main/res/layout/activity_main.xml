@@ -14,7 +14,7 @@
         android:layout_marginTop="32dp"
         android:gravity="center"
         android:text="Welcome to Bay State Politiquiz!"
-        android:textColor="#05C7F3"
+        android:textColor="#D3E9F1"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
