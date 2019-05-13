@@ -58,6 +58,7 @@ public class DifficultyPicker extends AppCompatActivity implements View.OnClickL
                 i = 9;
                 //Toast.makeText(getApplicationContext(), "Insane is clicked " + Integer.toString(i), Toast.LENGTH_SHORT).show();
                 break;
+                //push
         }
 
         Intent intent = new Intent(this, QuizViewActivity.class);
