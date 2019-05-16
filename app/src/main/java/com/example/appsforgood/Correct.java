@@ -8,8 +8,13 @@ import android.widget.TextView;
 
 public class Correct extends AppCompatActivity {
 
+
     static int score = 0;
 
+    /**
+     * Sets TextView to tell the user whether they got the correct answer. Sets TextView to tell the user what the correct answer was. Shows the user and computer scores.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,10 @@ public class Correct extends AppCompatActivity {
 
     }
 
+    /**
+     * Goes to next question
+     * @param v
+     */
     public void nextButton(View v){
         Intent intent = new Intent(this,QuizViewActivity.class);
         intent.putExtra("Score",score);
@@ -45,10 +54,16 @@ public class Correct extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Resets Correct page for each new quiz
+     */
     public void reset(){
         score = 0;
     }
 
+    /**
+     * Disables tablet back button from working so users cannot try to reanswer questions
+     */
     @Override
     public void onBackPressed(){
 

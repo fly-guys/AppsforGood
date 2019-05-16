@@ -28,6 +28,9 @@ public class Controller extends Application {
         j = representatives.size();
     }
 
+    /**
+     * Populates an ArrayList of Question objects from a .csv file
+     */
     public void createQuestions(){
         InputStream is = getResources().openRawResource(R.raw.questions);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -48,15 +51,12 @@ public class Controller extends Application {
         }
 
         Collections.shuffle(questionList);
-
-//        for(int k = questionList.size() - 1; k > 0; k--){
-//            int rand = (int)Math.random()*(k+1);
-//            questionList.set(rand,questionList.get(k));
-//            questionList.set(k,questionList.get(rand));
-//        }
-
     }
 
+    /**
+     * Gets a Question object
+     * @return a Question
+     */
     public Question getQuestion(){
         i--;
         if(i > questionList.size() - 11) {
@@ -68,16 +68,27 @@ public class Controller extends Application {
         }
     }
 
+    /**
+     * Gets a Sudden Death Question object
+     * @return a Question
+     */
+
     public Question getSuddenDeathQuestion(){
         i--;
         return questionList.get(i);
     }
 
+    /**
+     * Resets the Controller whenever a new Quiz is started
+     */
     public void reset(){
         i = 0;
         onCreate();
     }
 
+    /**
+     * Parses the Representatives csv file and creates an ArrayList with RepObject Objects
+     */
     public void createReps(){
 
         InputStream is = getResources().openRawResource(R.raw.profiles);
@@ -98,6 +109,12 @@ public class Controller extends Application {
             Log.wtf("MainActivity", "ERROR reading data on line " + line);
         }
     }
+
+    /**
+     * Gets the next Representative from the ArrayList of RepObjects
+     * @param next checks whether the user wants to go to the next Representative or the previous Representative. Loops to back of ArrayList if the user is at the end.
+     * @return a RepObject
+     */
 
     public RepObject getReps(String next){
 

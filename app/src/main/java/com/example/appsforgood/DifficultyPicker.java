@@ -16,6 +16,7 @@ public class DifficultyPicker extends AppCompatActivity implements View.OnClickL
     static Button expert;
     static Button insane;
 
+
     public static void refresh() {
     }
 
@@ -73,9 +74,5 @@ public class DifficultyPicker extends AppCompatActivity implements View.OnClickL
         startActivity(intent);
     }
 
-    public void reset(AppCompatActivity appCompatActivity){
-        appCompatActivity.finish();
-        appCompatActivity.recreate();
-    }
 
 }
