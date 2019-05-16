@@ -40,4 +40,9 @@ public class Bills extends AppCompatActivity {
         intent.setData(Uri.parse("https://malegislature.gov/Laws/SessionLaws"));
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed(){
+
+    }
 }

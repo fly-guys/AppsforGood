@@ -10,19 +10,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InstructionsActivity"></activity>
-        <activity android:name=".SuddenDeathCorrect" />
-        <activity android:name=".SuddenDeathActivity" />
-        <activity android:name=".LegislativeActivity" />
-        <activity android:name=".DifficultyPicker" />
-        <activity android:name=".ScoreActivity" />
-        <activity android:name=".QuizViewActivity" />
-        <activity android:name=".Correct" />
-        <activity android:name=".Bills" />
-        <activity android:name=".Representatives" />
-        <activity android:name=".LearnActivity" />
-        <activity android:name=".RepCollage" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".InstructionsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".SuddenDeathCorrect"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SuddenDeathActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LegislativeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DifficultyPicker"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ScoreActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Correct"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Bills"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Representatives"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LearnActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RepCollage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

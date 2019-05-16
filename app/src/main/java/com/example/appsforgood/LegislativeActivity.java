@@ -36,4 +36,9 @@ public class LegislativeActivity extends AppCompatActivity {
         intent.setData(Uri.parse("https://malegislature.gov/Legislators/Members/Senate"));
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed(){
+
+    }
 }

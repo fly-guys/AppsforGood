@@ -82,4 +82,9 @@ public class RepCollage extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+
+    }
+
 }

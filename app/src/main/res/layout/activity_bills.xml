@@ -5,7 +5,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context=".Bills"
-    android:background="@color/backgroundColor">
+    android:background="@color/backgroundColor"
+    >
 
     <LinearLayout
         android:layout_width="585dp"

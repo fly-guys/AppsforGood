@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0EDF0"
+    android:background="@color/backgroundColor"
     tools:context=".InstructionsActivity">
 
     <TextView
@@ -12,6 +12,7 @@
         android:layout_width="334dp"
         android:layout_height="159dp"
         android:gravity="center"
+        android:textColor="@color/textColor"
         android:text="@string/instructions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

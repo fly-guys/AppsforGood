@@ -48,4 +48,9 @@ public class Correct extends AppCompatActivity {
     public void reset(){
         score = 0;
     }
+
+    @Override
+    public void onBackPressed(){
+
+    }
 }

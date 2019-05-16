@@ -87,4 +87,9 @@ public class ScoreActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    @Override
+    public void onBackPressed(){
+
+    }
 }

@@ -17,4 +17,9 @@ public class InstructionsActivity extends AppCompatActivity {
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed(){
+
+    }
 }

@@ -153,5 +153,10 @@ public class SuddenDeathActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed(){
+
+    }
+
 
 }

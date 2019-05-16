@@ -33,4 +33,9 @@ public class LearnActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LegislativeActivity.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed(){
+
+    }
 }

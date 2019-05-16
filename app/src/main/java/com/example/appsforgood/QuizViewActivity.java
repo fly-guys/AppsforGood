@@ -28,6 +28,7 @@ public class QuizViewActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         aController = (Controller) getApplicationContext();
+        Random randy = new Random();
 
         Bundle bundle = intent.getExtras();
         int playerScore = (Integer) bundle.getInt("Score");
@@ -90,7 +91,7 @@ public class QuizViewActivity extends AppCompatActivity {
         buttons.add(option3);
         buttons.add(option4);
 
-        Random randy = new Random();
+        final Random randy = new Random();
 
         int correctButton = randy.nextInt(4);
 
@@ -147,8 +148,13 @@ public class QuizViewActivity extends AppCompatActivity {
             public void onFinish() {
                 timerView.setText("0");
                 Log.d("timerTag", "onFinishMethodOfTimer");
+                if(randy.nextInt(10) < DifficultyPicker.i){
+                    computerScore++;
+                }
                 Intent i = new Intent(getApplicationContext(), Correct.class);
                 i.putExtra("Correct", "Time's Up");
+                i.putExtra("ComputerScore",computerScore);
+                i.putExtra("CorrectAnswer",correctAnswer);
                 onStop();
                 startActivity(i);
             }
@@ -180,6 +186,11 @@ public class QuizViewActivity extends AppCompatActivity {
             timer.cancel();
             startActivity(intent);
         }
+    }
+
+    @Override
+    public void onBackPressed(){
+
     }
 
 }
