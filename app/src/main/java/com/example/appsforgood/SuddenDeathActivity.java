@@ -14,11 +14,16 @@ import java.util.Random;
 
 public class SuddenDeathActivity extends AppCompatActivity {
 
+    //Data
     private Controller aController;
     static CountDownTimer timer;
     static int computerScore = 0;
     DifficultyPicker difficultyPicker = new DifficultyPicker();
 
+    /**
+     * Starts the Sudden Death Activity and retrives the sudden death question from the controller
+     * @param savedInstanceState the Instance State
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +45,10 @@ public class SuddenDeathActivity extends AppCompatActivity {
         displayQuestion(question);
     }
 
+    /**
+     * Displays the question
+     * @param question the Question
+     */
     public void displayQuestion(Question question){
         TextView questionView = (TextView) findViewById(R.id.questionID);
         Button option1 = (Button) findViewById(R.id.option1ID);
@@ -131,6 +140,10 @@ public class SuddenDeathActivity extends AppCompatActivity {
         }.start();
     }
 
+    /**
+     * onClick method that starts the Sudden Death Correct activity and determines whether the user answered the question correctly
+     * @param v the View
+     */
     public void onClick(View v){
         Button button = (Button)findViewById(v.getId());
         Random randy = new Random();
@@ -153,6 +166,9 @@ public class SuddenDeathActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Disables the back button on the Android device
+     */
     @Override
     public void onBackPressed(){
 

@@ -13,9 +13,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class RepCollage extends AppCompatActivity {
+    //Data
     static int i = 0;
     private Controller controller;
 
+    /**
+     * Starts the RepCollage Activity and sets the name, picture, and description of the RepObject diplayed on the screen
+     * @param savedInstanceState the Instance State
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,18 +68,29 @@ public class RepCollage extends AppCompatActivity {
 
     }
 
+    /**
+     * Starts the Learn Activity
+     * @param v the View
+     */
     public void backButton(View v) {
         Intent intent = new Intent(this, LearnActivity.class);
         startActivity(intent);
     }
 
-
+    /**
+     * Starts the RepCollage Activity again to display the next RepObject
+     * @param v the View
+     */
     public void nextRep(View v){
         Intent intent = new Intent(this,RepCollage.class);
         intent.putExtra("Next","Next");
         startActivity(intent);
     }
 
+    /**
+     *  Starts the RepCollage Activity again to display the previous RepObject
+     * @param v the View
+     */
     public void prevRep(View v){
         Intent intent = new Intent(this,RepCollage.class);
         intent.putExtra("Next","Previous");
@@ -82,6 +98,9 @@ public class RepCollage extends AppCompatActivity {
 
     }
 
+    /**
+     * Disables the back button on the Android device
+     */
     @Override
     public void onBackPressed(){
 

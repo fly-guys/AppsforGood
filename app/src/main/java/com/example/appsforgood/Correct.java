@@ -7,13 +7,12 @@ import android.view.View;
 import android.widget.TextView;
 
 public class Correct extends AppCompatActivity {
-
-
+    //Data
     static int score = 0;
 
     /**
      * Sets TextView to tell the user whether they got the correct answer. Sets TextView to tell the user what the correct answer was. Shows the user and computer scores.
-     * @param savedInstanceState
+     * @param savedInstanceState the previous Instance State
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ public class Correct extends AppCompatActivity {
 
     /**
      * Goes to next question
-     * @param v
+     * @param v the View
      */
     public void nextButton(View v){
         Intent intent = new Intent(this,QuizViewActivity.class);
@@ -62,7 +61,7 @@ public class Correct extends AppCompatActivity {
     }
 
     /**
-     * Disables tablet back button from working so users cannot try to reanswer questions
+     * Disables tablet back button from working so users cannot try to re-answer questions
      */
     @Override
     public void onBackPressed(){

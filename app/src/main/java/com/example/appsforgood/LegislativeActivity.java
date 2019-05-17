@@ -8,19 +8,29 @@ import android.view.View;
 
 public class LegislativeActivity extends AppCompatActivity {
 
+    /**
+     * Starts the Legislative Activity
+     * @param savedInstanceState the InstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_legislative);
-
-
     }
 
+    /**
+     * onClick method that starts the Learn Activity
+     * @param v the View
+     */
     public void backButton(View v){
         Intent intent = new Intent(this,LearnActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * onClick method that redirects the app to the mass.gov website representatives page
+     * @param v the View
+     */
     public void houseButton(View v){
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
@@ -29,6 +39,10 @@ public class LegislativeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * onClick method that redirects the app to the mass.gov website senate page
+     * @param v
+     */
     public void senateButton(View v){
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
@@ -37,6 +51,9 @@ public class LegislativeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Disables the back button on the Android device
+     */
     @Override
     public void onBackPressed(){
 

@@ -11,9 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ScoreActivity extends AppCompatActivity {
-
+    //Data
     static CountDownTimer timer;
 
+    /**
+     * Compares the player score to the computer score at the end of the game, determines the winner, and displays the correct image
+     * @param savedInstanceState the Instance State
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,25 +73,21 @@ public class ScoreActivity extends AppCompatActivity {
                 }
             }.start();
         }
-
-//        if(score == computerScore){
-//
-//            Intent intent1 = new Intent(this,QuizViewActivity.class);
-//            intent1.putExtra("New Game","Sudden Death");
-//            intent1.putExtra("Score",score);
-//            Log.d("SuddenDeath in Score","Go to QuizViewActivity");
-//            startActivity(intent);
-//        }
-
-
     }
 
+    /**
+     * Starts the Main Activity
+     * @param v the View
+     */
     public void onClick(View v){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
 
     }
 
+    /**
+     * Disables the back button on the Android device
+     */
     @Override
     public void onBackPressed(){
 

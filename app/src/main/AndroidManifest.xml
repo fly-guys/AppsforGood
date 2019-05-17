@@ -28,8 +28,6 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Bills"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Representatives"
-            android:screenOrientation="portrait"/>
         <activity android:name=".LearnActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".RepCollage"

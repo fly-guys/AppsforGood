@@ -8,6 +8,10 @@ import android.widget.ImageView;
 
 public class SuddenDeathCorrect extends AppCompatActivity {
 
+    /**
+     * Sets the image to either the win or lose image depending on the results from SuddenDeathActivity
+     * @param savedInstanceState the Instance State
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +29,18 @@ public class SuddenDeathCorrect extends AppCompatActivity {
         }
     }
 
+    /**
+     *
+     * @param v the View
+     */
     public void backButton(View v){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Disables the back button on the Android device
+     */
     @Override
     public void onBackPressed(){
 

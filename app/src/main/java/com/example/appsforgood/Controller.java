@@ -12,9 +12,9 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class Controller extends Application {
+    //Data
     private ArrayList<Question> questionList = new ArrayList<>();
     private ArrayList<RepObject> representatives = new ArrayList<>();
-
     int i;
     int j;
 
@@ -55,7 +55,7 @@ public class Controller extends Application {
 
     /**
      * Gets a Question object
-     * @return a Question
+     * @return a Question object
      */
     public Question getQuestion(){
         i--;
@@ -70,7 +70,7 @@ public class Controller extends Application {
 
     /**
      * Gets a Sudden Death Question object
-     * @return a Question
+     * @return a Question object
      */
 
     public Question getSuddenDeathQuestion(){
@@ -87,7 +87,7 @@ public class Controller extends Application {
     }
 
     /**
-     * Parses the Representatives csv file and creates an ArrayList with RepObject Objects
+     * Parses the Representatives .csv file and creates an ArrayList with RepObject Objects
      */
     public void createReps(){
 

@@ -2,5 +2,6 @@
     <string name="app_name">Bay State Politiquiz</string>
     <string name="answerRevealHeader">Your answer is...</string>
     <string name="booleanAnswer" />
-    <string name="instructions">Welcome to Bay State Politiquiz! Click the play button on the main screen to begin the game. Click the learn button to view information on local representatives and local bills and laws.</string>
+    <string name="instructions">Welcome to Bay State Politiquiz! Click the play button on the main screen to begin the game. In the game, choose the correct answer to the question before time runs out! Click the learn button to view information on local representatives and local bills and laws.</string>
+    <string name="back">Back</string>
 </resources>

@@ -13,13 +13,17 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class QuizViewActivity extends AppCompatActivity {
-
+    //Data
     private Controller aController;
     static CountDownTimer timer;
     static int computerScore = 0;
     DifficultyPicker difficultyPicker = new DifficultyPicker();
     String correctAnswer = "";
 
+    /**
+     * Starts the Activity and resets all scores
+     * @param savedInstanceState the Instance State
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,22 +41,13 @@ public class QuizViewActivity extends AppCompatActivity {
             Correct.score = 0;
             DifficultyPicker.refresh();
             aController.reset();
-            //pushing reset code
         }
 
         Question question = aController.getQuestion();
 
         Log.d("Got Question","Got Question");
-//        if(bundle.getString("New Game").equals("Sudden Death")){
-//            Log.d("SuddenDeath-------->","Got to Sudden Death");
-//            question = aController.getSuddenDeathQuestion();
-//        }
 
         if(question.getAnswer().equals("null")){
-//            if(playerScore == computerScore){
-//               question = aController.getSuddenDeathQuestion();
-//               displayQuestion(question);
-//            }
             Intent scoreIntent = new Intent(this, ScoreActivity.class);
             scoreIntent.putExtra("PlayerScore", playerScore);
             scoreIntent.putExtra("ComputerScore", computerScore);
@@ -64,6 +59,10 @@ public class QuizViewActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Displays a Question object and randomizes which button stores the Correct answer
+     * @param question the Question that is displayed
+     */
     public void displayQuestion(Question question){
         TextView questionView = (TextView) findViewById(R.id.questionID);
         Button option1 = (Button) findViewById(R.id.option1ID);
@@ -161,6 +160,10 @@ public class QuizViewActivity extends AppCompatActivity {
         }.start();
     }
 
+    /**
+     * onClick method that starts the Correct Activity
+     * @param v the View
+     */
     public void onClick(View v){
         Button button = (Button)findViewById(v.getId());
         Random randy = new Random();
@@ -188,6 +191,9 @@ public class QuizViewActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Disables the back button on the Android device
+     */
     @Override
     public void onBackPressed(){
 

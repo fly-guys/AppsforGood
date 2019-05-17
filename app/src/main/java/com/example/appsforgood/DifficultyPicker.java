@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class DifficultyPicker extends AppCompatActivity implements View.OnClickListener {
 
+    //Data
     static int i;
     static Button beginner;
     static Button intermediate;
@@ -20,7 +21,10 @@ public class DifficultyPicker extends AppCompatActivity implements View.OnClickL
     public static void refresh() {
     }
 
-
+    /**
+     * Sets up onClickListeners for difficulty button selectors
+     * @param savedInstanceState the previous InstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,37 +34,33 @@ public class DifficultyPicker extends AppCompatActivity implements View.OnClickL
         intermediate = (Button) findViewById(R.id.intermediateButton);
         expert = (Button) findViewById(R.id.expertButton);
         insane = (Button) findViewById(R.id.insaneButton);
-        //stuff
 
         beginner.setOnClickListener(this);
         intermediate.setOnClickListener(this);
         expert.setOnClickListener(this);
         insane.setOnClickListener(this);
-
     }
 
+    /**
+     * Sets the difficulty for each button and begins the QuizViewActivity
+     * @param v the View
+     */
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
             case R.id.beginnerButton:
                 i = 2;
-                //Toast.makeText(getApplicationContext(), "Beginner is clicked " + Integer.toString(i), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.intermediateButton:
                 i = 4;
-                //Toast.makeText(getApplicationContext(), "Intermediate is clicked " + Integer.toString(i), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.expertButton:
                 i = 7;
-                //Toast.makeText(getApplicationContext(), "Expert is clicked " + Integer.toString(i), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.insaneButton:
                 i = 9;
-                //Toast.makeText(getApplicationContext(), "Insane is clicked " + Integer.toString(i), Toast.LENGTH_SHORT).show();
                 break;
-                //push
-            //push
         }
 
         Intent intent = new Intent(this, QuizViewActivity.class);
@@ -69,6 +69,10 @@ public class DifficultyPicker extends AppCompatActivity implements View.OnClickL
         startActivity(intent);
     }
 
+    /**
+     * onClick method that allows users to go back to the home page
+     * @param v the View
+     */
     public void backButton(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
